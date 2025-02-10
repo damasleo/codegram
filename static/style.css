@@ -283,34 +283,31 @@ nav .notification-popup .notification-content span {
     left: 0;
     background-color: white;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+    border-radius: var(--card-border-radius);
     z-index: 1;
     overflow: hidden;
     animation: fadeIn 0.3s ease;
-    width: 11rem;
+    width: 13rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    align-items: start;
+
   }
   
   /* Links inside dropdown */
   .dropdown-content a {
+    width: 100%;
     color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s ease;
-    display: flex;
-   
   }
 
-  .dropdown-content i{
-    font-size: 1rem;
-    margin-right: 1rem;
-    color: var(--color-pimary);
-    
-  }
+  
   
   /* Hover effect for links */
   .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background: var(--color-light);
+    border-radius: var(--card-border-radius);
   }
   
   /* Fade-in animation */
@@ -378,7 +375,6 @@ nav .notification-popup .notification-content span {
 
 .profile-menu a {
   color: black;
-  font-weight: bold;
   
 }
 

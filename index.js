@@ -1,24 +1,23 @@
 const dropdownToggle = document.getElementById('dropdownToggle');
 const dropdownMenu = document.getElementById('dropdownMenu');
-const dropdownIcon = dropdownToggle.querySelector('.dropdown-icon');
 const notificationsIcon = document.getElementById('notifications');
 const notificationPopup = document.querySelector('.notification-popup');
 const notificationCount = document.querySelector('.notification-count'); 
 const profileDropdownToggle = document.getElementById('profileDropdownToggle');
 const profileDropdown = document.getElementById('profileDropdown');
 
+dropdownToggle.addEventListener('click', (event) => {
+    event.preventDefault();
 
-dropdownToggle.addEventListener('click', () => {
-  dropdownMenu.classList.toggle('open');
-
-  if (dropdownMenu.classList.contains('open')) {
-    dropdownIcon.classList.remove('fa-chevron-down');
-    dropdownIcon.classList.add('fa-times');
-  } else {
-    dropdownIcon.classList.remove('fa-times');
-    dropdownIcon.classList.add('fa-chevron-down');
-  }
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
 });
+
+document.addEventListener('click', (event) => {
+    if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = 'none';
+    }
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const notificationIcon = document.getElementById('notifications');
